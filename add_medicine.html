@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Medicine</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e8f0f2; /* Light gray/blue background */
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333; /* Dark gray text color */
+        }
+
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 400px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #2c3e50; /* Dark teal text color */
+        }
+
+        input[type="text"], input[type="date"], input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            background-color: #f9f9f9; /* Light gray input background */
+        }
+
+        input[type="submit"] {
+            background-color: #2c8f8d; /* Teal button color */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            width: 100%;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #247d7b; /* Darker teal on hover */
+        }
+
+        .edit-link {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-size: 16px;
+            color: white;
+            text-decoration: none;
+            background-color: #2c8f8d; /* Teal button color */
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        .edit-link:hover {
+            background-color: #247d7b; /* Darker teal on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Add New Medicine</h1>
+        <form action="add_medicine.php" method="post">
+            <label for="medicine_name">Medicine Name:</label>
+            <input type="text" id="medicine_name" name="medicine_name" required>
+
+            <label for="company_name">Company Name:</label>
+            <input type="text" id="company_name" name="company_name" required>
+
+            <label for="ndc">NDC:</label>
+            <input type="text" id="ndc" name="ndc" required>
+
+            <label for="expiry_date">Expiry Date:</label>
+            <input type="date" id="expiry_date" name="expiry_date" required>
+
+            <label for="available_amount_left">Available Amount Left:</label>
+            <input type="number" id="available_amount_left" name="available_amount_left" min="0" required>
+
+            <input type="submit" value="Add Medicine">
+        </form>
+    </div>
+
+    <a href="view_medicines.php" class="edit-link">Edit Existing Medicine</a>
+</body>
+</html>
